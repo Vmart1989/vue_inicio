@@ -76,36 +76,33 @@ const frases = [
 ];
 
 
+
 </script>
 
 
 
 <template>
 
+<ul>
+  <li v-for="{frase:cita, autor} in frases">
   <p>
-    <span>{{ frases[0].frase }}</span>
-    <blockquote>-{{ frases[0].autor}}</blockquote>
+    <span>{{ cita }}</span>
+    <blockquote>-{{ autor}}</blockquote>
   </p> <br>
-  <p>
-    <span>{{ frases[1].frase }}</span>
-    <blockquote>-{{ frases[1].autor}}</blockquote>
-  </p> <br>
-  <p>
-    <span>{{ frases[2].frase }}</span>
-    <blockquote>-{{ frases[2].autor}}</blockquote>
-  </p> <br>
-  <p>
-    <span>{{ frases[3].frase }}</span>
-    <blockquote>-{{ frases[3].autor}}</blockquote>
-  </p> <br>
-  <p>
-    <span>{{ frases[4].frase }}</span>
-    <blockquote>-{{ frases[4].autor}}</blockquote>
-  </p>
+  </li>
+</ul>
 
+<ul>
+  <li v-for="{frase, autor}, index in frases">
+  <p>
+    <span>({{index + 1}}) {{ frase }}</span>
+    <blockquote>-{{ autor}}</blockquote>
+  </p> <br>
+  </li>
+</ul>
   
 
-
+  
 
   <!-- <p>{{ (7>5)? 'Si' : 'No' }}</p> -->
 
